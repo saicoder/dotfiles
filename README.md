@@ -12,9 +12,8 @@ install
 Run this:
 
 ```sh
-git clone https://github.com/saicoder/dotfiles.git ~/.dotfiles
-git submodule update --init --recursive
+git clone --recursive https://github.com/saicoder/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles && sh install.sh
 ```
 
- 
+Default theme is base16. If you using vim in terminal you can get this theme from here: https://github.com/chriskempson/base16 
