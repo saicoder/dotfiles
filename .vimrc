@@ -5,7 +5,7 @@ set number
 set nobackup nowritebackup
 
 " Writing
-set tabstop=4 hlsearch softtabstop=0 expandtab shiftwidth=4 smarttab backspace=2
+set tabstop=3 hlsearch softtabstop=0 expandtab shiftwidth=3 smarttab backspace=2 rnu smartindent 
 let mapleader=";"
 
 
