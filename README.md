@@ -1,19 +1,22 @@
 saicoder dotfiles
 =================
 
-dotfiles
------------------
-Your dotfiles are how you personalize your system. These are mine.
-This repo includes dotfiles for vim and zsh
+Neo Vim and Zsh configuration files
 
-install
+![image][img.png]
+
+
+Installation
 ----------------
 
-Run this:
+Neo Vim:
 
-```sh
-git clone --recursive https://github.com/saicoder/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles && sh install.sh
+sh```
+  git clone https://github.com/saicoder/dotfiles.git ~/.config/nvim
+  #Run :PlugClean and :PlugInstall to install plugins
 ```
 
-Default theme is base16. If you using vim in terminal you can get this theme from here: https://github.com/chriskempson/base16 
+Zsh(in .zshrc): `source path-to/zsh-config.sh` 
+
+###Theme
+Theme is [One Half Dark](https://github.com/sonph/onehalf). Font is *Source Code Pro*
