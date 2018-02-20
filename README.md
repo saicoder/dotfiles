@@ -1,9 +1,9 @@
-saicoder dotfiles
+.files
 =================
 
 Neo Vim and Zsh configuration files
 
-![image][img.png]
+![image](img.png)
 
 
 Installation
@@ -11,10 +11,9 @@ Installation
 
 Neo Vim:
 
-sh```
-  git clone https://github.com/saicoder/dotfiles.git ~/.config/nvim
-  #Run :PlugClean and :PlugInstall to install plugins
-```
+`git clone https://github.com/saicoder/dotfiles.git ~/.config/nvim`
+
+Then run :PlugClean and :PlugInstall to install plugins
 
 Zsh(in .zshrc): `source path-to/zsh-config.sh` 
 
