@@ -11,8 +11,6 @@ Plug 'scrooloose/nerdtree'
   map <C-n> :NERDTreeToggle<CR>
   let NERDTreeIgnore=['node_modules', '\.log$']
 
-Plug 'tomtom/tcomment_vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_map = '<c-p>'
   let g:ctrlp_cmd = 'CtrlP'
@@ -26,10 +24,27 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   inoremap <expr><Up>  pumvisible() ? "\<C-p>" : "\<Up>"
   inoremap <expr><Down>  pumvisible() ? "\<C-n>" : "\<Down>"
 
+Plug 'tomtom/tcomment_vim'
+Plug 'jiangmiao/auto-pairs'
+  " FIX < stuck untill fix
+  autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
 
+" elixir
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+
+" js
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" html and markup
 Plug 'slim-template/vim-slim'
+Plug 'mattn/emmet-vim'
+  let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx', }, }
+Plug 'alvan/vim-closetag'
+  let g:closetag_filenames = '*.xhtml,*.html,*.jsx,*.js'
+
+
 
 call plug#end()
 
