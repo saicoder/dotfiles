@@ -14,7 +14,7 @@ promptinit
 export CLICOLOR=1 #cli color enabled
 
 # PROMPT
-setopt promptsubst
+setopt promptsubst interactivecomments
 export PROMPT="[%n] %9F%1~%(#.#.$)%f "
 export RPROMPT='%F{green}%~%f'
 export RPROMPT='$(___r_prompt)'
@@ -58,10 +58,40 @@ alias h='history'
 
 alias ..="cd .."
 
+# GIT
 alias gs="git status"
+alias ga="git add"
+alias gd="git diff"
+alias gc="git commit"
 alias push="git push"
 alias pull="git pull"
-alias commit="git commit"
-alias add="git add"
+
+
+# Quick Launch menu used for ex: quick login to machines. Example (in .zshrc):
+#   QUICK_LAUNCH_COMMANDS = ('ssh root@hello.com' 'ssh 127.0.0.1')
+#   alias ql="quick_lanch"
+
+function quick_lanch() {
+  tput setaf 4;
+  printf "\n============================================"
+  printf "\n              Quick Launch"
+  printf "\n============================================\n\n"
+
+  for ((ix = 1; ix <= $#QUICK_LAUNCH_COMMANDS; ix++)); do
+    tput setaf 2; printf "($ix) => "
+    tput setaf 3; echo "$QUICK_LAUNCH_COMMANDS[$ix]"
+  done
+
+  tput setaf 4; printf "\n==> "; tput sgr0
+  read index; 
+
+  if [ "$QUICK_LAUNCH_COMMANDS[$index]" ]; then
+    sh -c "$QUICK_LAUNCH_COMMANDS[$index]"
+  else
+    echo "Invalid option"
+  fi
+}
+
+
 
 
