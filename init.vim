@@ -24,21 +24,30 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   inoremap <expr><Up>  pumvisible() ? "\<C-p>" : "\<Up>"
   inoremap <expr><Down>  pumvisible() ? "\<C-n>" : "\<Down>"
 
+Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
   " FIX < stuck untill fix
   autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
 
-" elixir
-Plug 'elixir-editors/vim-elixir'
+" === Languages
+Plug 'sheerun/vim-polyglot'
+
+" Linter
+Plug 'w0rp/ale'
+  let g:ale_lint_on_text_changed = 'never'
+  let g:airline#extensions#ale#enabled = 1
+  let g:ale_sign_error = 'ⓧ'
+  let g:ale_sign_warning = '⚠'
+  let b:ale_fixers = ['prettier', 'eslint']
+  set signcolumn=yes
+
+
+" elixir autocomplete
 Plug 'slashmili/alchemist.vim'
 
-" js
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 
 " html and markup
-Plug 'slim-template/vim-slim'
 Plug 'mattn/emmet-vim'
   let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx', }, }
 Plug 'alvan/vim-closetag'
@@ -67,7 +76,6 @@ colorscheme onehalfdark
 
 " Sytntax
 syntax on
-au BufNewFile,BufRead *.ejs set filetype=html
 
 " Undo 
 set undofile                " Save undo's after file closes
@@ -84,6 +92,7 @@ noremap <Leader>r :reg<CR>
 noremap <Leader>l :b#<CR>
 noremap <Leader>p "*p
 vnoremap <Leader>y "*y
+noremap <Leader>f :ALEFix eslint<CR>
 :nmap <C-s> :w<CR>
 :imap <C-s> <Esc>:w<CR>a
 
